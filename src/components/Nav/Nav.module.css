@@ -1,0 +1,31 @@
+.nav {
+  text-align: center;
+  background-color: #1976d2;
+  padding: 20px;
+  border-bottom-left-radius: 70px 50px;
+  border-bottom-right-radius: 70px 50px;
+}
+.list {
+  justify-content: center;
+  display: flex;
+}
+.listItem:first-child {
+  margin-right: 5px;
+  @media screen and (min-width: 768px) {
+    margin-right: 20px;
+  }
+}
+.navLink {
+  color: black;
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+.navLink[aria-current] {
+  color: white;
+  box-shadow: 10px 5px 5px grey;
+}
