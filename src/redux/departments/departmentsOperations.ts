@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_KEY = "05ef6fbc86d958f0211779c2ad06c4a9";
+const API_KEY = "73721ec34977bf0d2269b1ddf303d43d";
 
 type typeDepartments = {
   map: any;
