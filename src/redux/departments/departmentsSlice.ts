@@ -1,25 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getDepartments, getPostboxes } from "./departmentsOperations";
-import { toast } from "react-toastify";
+import { createSlice } from '@reduxjs/toolkit';
+import { getDepartments, getPostboxes } from './departmentsOperations';
+import { toast } from 'react-toastify';
 
 const initialState = {
   departments: [] as { Description: string }[],
-  currentCity: "",
+  currentCity: '',
   error: false as any,
   isLoading: false,
 };
 
 const departmentsSlice = createSlice({
-  name: "departments",
+  name: 'departments',
   initialState,
   reducers: {
     currentCityDepartments(state, action) {
       state.currentCity = action.payload;
     },
   },
-  extraReducers: (builder) =>
+  extraReducers: builder =>
     builder
-      .addCase(getDepartments.pending, (state) => {
+      .addCase(getDepartments.pending, state => {
         state.isLoading = true;
         state.error = false;
       })
@@ -39,7 +39,7 @@ const departmentsSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(getPostboxes.pending, (state) => {
+      .addCase(getPostboxes.pending, state => {
         state.isLoading = true;
         state.error = false;
       })

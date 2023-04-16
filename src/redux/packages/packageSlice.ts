@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getPackage } from "./packageOperations";
-import { toast } from "react-toastify";
+import { createSlice } from '@reduxjs/toolkit';
+import { getPackage } from './packageOperations';
+import { toast } from 'react-toastify';
 
 const initialState = {
   packagesAll: [] as {
@@ -14,7 +14,7 @@ const initialState = {
 };
 
 const packagesSlice = createSlice({
-  name: "packages",
+  name: 'packages',
   initialState,
   reducers: {
     clearAll(state) {
@@ -22,13 +22,13 @@ const packagesSlice = createSlice({
     },
     deleteItem(state, action) {
       state.packagesAll = state.packagesAll.filter(
-        (item) => item.number !== action.payload
+        item => item.number !== action.payload
       );
     },
   },
-  extraReducers: (builder) =>
+  extraReducers: builder =>
     builder
-      .addCase(getPackage.pending, (state) => {
+      .addCase(getPackage.pending, state => {
         state.isLoading = true;
         state.error = false;
       })

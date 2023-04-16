@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Stack, TextField, Button, Box } from "@mui/material";
-import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import React, { useState } from 'react';
+import { Stack, TextField, Button, Box } from '@mui/material';
+import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 interface IAddressForm {
   handlerSabmit: (city: string) => void;
@@ -11,7 +11,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
   handlerSabmit,
   currentButtonClick,
 }) => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
 
   const handleCityChange = (e: {
     target: { value: React.SetStateAction<string> };
@@ -25,18 +25,18 @@ export const AddressForm: React.FC<IAddressForm> = ({
   };
 
   const departmentClick = () => {
-    currentButtonClick("dep");
+    currentButtonClick('dep');
   };
 
   const boxClick = () => {
-    currentButtonClick("box");
+    currentButtonClick('box');
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: "10px" }}>
+    <form onSubmit={handleSubmit} style={{ marginBottom: '10px' }}>
       <Stack
         spacing={2}
-        sx={{ width: 300, display: "flex", mx: "auto", marginBottom: "20px" }}
+        sx={{ width: 300, display: 'flex', mx: 'auto', marginBottom: '20px' }}
       >
         <TextField
           value={city}
@@ -48,13 +48,13 @@ export const AddressForm: React.FC<IAddressForm> = ({
           variant="standard"
         />
       </Stack>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: 'flex' }}>
         <Button
           onClick={departmentClick}
           type="submit"
           variant="contained"
           endIcon={<SearchTwoToneIcon />}
-          sx={{ display: "flex", mx: "auto", marginTop: "10px" }}
+          sx={{ display: 'flex', mx: 'auto', marginTop: '10px' }}
         >
           Пошук відділень
         </Button>
@@ -63,7 +63,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
           type="submit"
           variant="contained"
           endIcon={<SearchTwoToneIcon />}
-          sx={{ display: "flex", mx: "auto", marginTop: "10px" }}
+          sx={{ display: 'flex', mx: 'auto', marginTop: '10px' }}
         >
           Пошук поштоматів
         </Button>

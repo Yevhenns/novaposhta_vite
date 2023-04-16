@@ -1,13 +1,13 @@
-import React from "react";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Container } from "@mui/material";
-import css from "./Footer.module.css";
+import React from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Container } from '@mui/material';
+import css from './Footer.module.css';
 
 export const Footer: React.FC = () => {
   return (
     <footer className={css.footer}>
-      <Container sx={{ display: "flex", mx: "auto" }}>
+      <Container sx={{ display: 'flex', mx: 'auto' }}>
         <div className={css.iconSet}>
           <a
             className={css.socialLink}

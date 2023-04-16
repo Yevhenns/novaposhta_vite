@@ -1,9 +1,9 @@
-import React from "react";
-import { HistoryListItem } from "./HistoryListItem";
-import { useAppDispatch } from "../../redux/hooks";
-import { clearAll } from "../../redux/packages/packageSlice";
-import { Button, Box, List } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import React from 'react';
+import { HistoryListItem } from './HistoryListItem';
+import { useAppDispatch } from '../../redux/hooks';
+import { clearAll } from '../../redux/packages/packageSlice';
+import { Button, Box, List } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 interface IData {
   data: [{ number: string; status: string; sender: string; recipient: string }];
@@ -17,7 +17,7 @@ export const HistoryList: React.FC<IData> = ({ data, addInfo }) => {
     <Box>
       <h2>Історія пошуку</h2>
       <List>
-        {data.map((item) => {
+        {data.map(item => {
           return (
             <HistoryListItem
               key={item.number}
@@ -32,7 +32,7 @@ export const HistoryList: React.FC<IData> = ({ data, addInfo }) => {
         variant="outlined"
         startIcon={<DeleteIcon />}
         color="error"
-        sx={{ display: "flex", mx: "auto" }}
+        sx={{ display: 'flex', mx: 'auto' }}
       >
         Очистити історію
       </Button>

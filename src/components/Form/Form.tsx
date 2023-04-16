@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Stack, TextField, Button } from "@mui/material";
-import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import React, { useEffect, useState } from 'react';
+import { Stack, TextField, Button } from '@mui/material';
+import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 interface IForm {
   onSubmit: (umber: string) => void;
@@ -13,7 +13,7 @@ export const Form: React.FC<IForm> = ({
   addFormNumber,
   inputNumber,
 }) => {
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState('');
 
   useEffect(() => {
     if (addFormNumber) setNumber(inputNumber);
@@ -29,8 +29,8 @@ export const Form: React.FC<IForm> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: "10px" }}>
-      <Stack spacing={2} sx={{ width: 300, mx: "auto" }} marginBottom={5}>
+    <form onSubmit={handleSubmit} style={{ marginBottom: '10px' }}>
+      <Stack spacing={2} sx={{ width: 300, mx: 'auto' }} marginBottom={5}>
         <TextField
           value={number}
           onChange={handleNumberChange}
@@ -45,7 +45,7 @@ export const Form: React.FC<IForm> = ({
         type="submit"
         variant="contained"
         endIcon={<SearchTwoToneIcon />}
-        sx={{ display: "flex", mx: "auto" }}
+        sx={{ display: 'flex', mx: 'auto' }}
       >
         Пошук
       </Button>

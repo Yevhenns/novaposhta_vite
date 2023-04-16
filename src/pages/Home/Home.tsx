@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Form } from "../../components/Form/Form";
-import { PackageInfo } from "../../components/PackageInfo/PackageInfo";
-import { HistoryList } from "../../components/HistoryList/HistoryList";
+import React, { useState, useEffect } from 'react';
+import { Form } from '../../components/Form/Form';
+import { PackageInfo } from '../../components/PackageInfo/PackageInfo';
+import { HistoryList } from '../../components/HistoryList/HistoryList';
 
-import { getPackage } from "../../redux/packages/packageOperations";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { getPackage } from '../../redux/packages/packageOperations';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   getPackagesArray,
   getIsLoading,
-} from "../../redux/packages/packageSelectors";
+} from '../../redux/packages/packageSelectors';
 
-import { Container, CircularProgress, Box } from "@mui/material";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Container, CircularProgress, Box } from '@mui/material';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type TypeInfo = { status: string; sender: string; recipient: string };
 
@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const [info, setInfo] = useState<null | TypeInfo>(null);
-  const [inputNumber, setInputNumber] = useState("");
+  const [inputNumber, setInputNumber] = useState('');
   const [addFormNumber, setAddFormNumber] = useState(false);
 
   useEffect(
@@ -43,7 +43,7 @@ export const Home: React.FC = () => {
       toast.warn(`Посилка ${number} вже у списку!`);
       return;
     }
-    if (number === "") {
+    if (number === '') {
       toast.warn(`Введіть номер посилки!`);
       return;
     }
@@ -68,7 +68,7 @@ export const Home: React.FC = () => {
           inputNumber={inputNumber}
         />
         {isLoading && (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <CircularProgress />
           </Box>
         )}

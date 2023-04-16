@@ -1,5 +1,5 @@
-import React from "react";
-import { Pagination } from "@mui/material";
+import React from 'react';
+import { Pagination } from '@mui/material';
 
 type PaginationProps = {
   departments: number;
@@ -25,7 +25,7 @@ export const PaginationComponent: React.FC<PaginationProps> = ({
       onChange={paginate}
       siblingCount={0}
       boundaryCount={1}
-      sx={{ textAlign: "center" }}
+      sx={{ textAlign: 'center' }}
     />
   );
 };

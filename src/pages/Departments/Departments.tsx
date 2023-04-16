@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import { DepartmentList } from "../../components/DepartmentList/DepartmentList";
-import { AddressForm } from "../../components/AddressForm/AddressForm";
-import { PaginationComponent } from "../../components/PaginationComponent/PaginationComponent";
+import React, { useState } from 'react';
+import { DepartmentList } from '../../components/DepartmentList/DepartmentList';
+import { AddressForm } from '../../components/AddressForm/AddressForm';
+import { PaginationComponent } from '../../components/PaginationComponent/PaginationComponent';
 import {
   getDepartmentsArray,
   getIsLoading,
-} from "../../redux/departments/departmentsSelectors";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+} from '../../redux/departments/departmentsSelectors';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   getDepartments,
   getPostboxes,
-} from "../../redux/departments/departmentsOperations";
-import { currentCityDepartments } from "../../redux/departments/departmentsSlice";
-import { Container, Box, CircularProgress } from "@mui/material";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+} from '../../redux/departments/departmentsOperations';
+import { currentCityDepartments } from '../../redux/departments/departmentsSlice';
+import { Container, Box, CircularProgress } from '@mui/material';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Departments: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,7 +23,7 @@ export const Departments: React.FC = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(15);
-  const [clickButton, setClickButton] = useState("");
+  const [clickButton, setClickButton] = useState('');
 
   const currentButtonClick = (buttonName: string) => {
     setClickButton(buttonName);
@@ -31,17 +31,17 @@ export const Departments: React.FC = () => {
 
   const handlerSabmit = (city: string) => {
     const optimizedCity = city.trim().toUpperCase();
-    if (city.trim() === "") {
+    if (city.trim() === '') {
       toast.error(`Введіть назву населеного пункту!`);
       return;
     }
-    if (clickButton === "dep") {
+    if (clickButton === 'dep') {
       dispatch(getDepartments(city));
       dispatch(currentCityDepartments(optimizedCity));
       setCurrentPage(1);
       return;
     }
-    if (clickButton === "box") {
+    if (clickButton === 'box') {
       dispatch(getPostboxes(city));
       dispatch(currentCityDepartments(optimizedCity));
       setCurrentPage(1);
@@ -68,7 +68,7 @@ export const Departments: React.FC = () => {
           currentButtonClick={currentButtonClick}
         />
         {loading && (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <CircularProgress />
           </Box>
         )}
@@ -76,7 +76,7 @@ export const Departments: React.FC = () => {
           <DepartmentList currentDepartments={currentDepartments} />
         )}
         {!loading && (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <PaginationComponent
               departments={departments.length}
               perPage={perPage}

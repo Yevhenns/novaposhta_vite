@@ -1,8 +1,8 @@
-import React from "react";
-import { useAppSelector } from "../../redux/hooks";
-import { getCurrentCity } from "../../redux/departments/departmentsSelectors";
-import { nanoid } from "nanoid";
-import { List, ListItem } from "@mui/material";
+import React from 'react';
+import { useAppSelector } from '../../redux/hooks';
+import { getCurrentCity } from '../../redux/departments/departmentsSelectors';
+import { nanoid } from 'nanoid';
+import { List, ListItem } from '@mui/material';
 
 interface ICurrentDepartments {
   currentDepartments: string[];
@@ -14,8 +14,8 @@ export const DepartmentList: React.FC<ICurrentDepartments> = ({
   const currentCity = useAppSelector(getCurrentCity);
 
   const commonStyles = {
-    bgcolor: "background.paper",
-    borderColor: "text.primary",
+    bgcolor: 'background.paper',
+    borderColor: 'text.primary',
     m: 1,
     border: 1,
   };
@@ -24,15 +24,15 @@ export const DepartmentList: React.FC<ICurrentDepartments> = ({
     <>
       <h2>Населений пункт: {currentCity.toUpperCase()}</h2>
       <List>
-        {currentDepartments.map((item) => {
+        {currentDepartments.map(item => {
           return (
             <ListItem
               key={nanoid()}
               sx={{
-                minHeight: "60px",
+                minHeight: '60px',
                 ...commonStyles,
-                borderRadius: "16px",
-                marginLeft: "0",
+                borderRadius: '16px',
+                marginLeft: '0',
               }}
             >
               {item}

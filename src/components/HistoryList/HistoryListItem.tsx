@@ -1,8 +1,8 @@
-import React from "react";
-import { Button, IconButton, ListItem } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { useAppDispatch } from "../../redux/hooks";
-import { deleteItem } from "../../redux/packages/packageSlice";
+import React from 'react';
+import { Button, IconButton, ListItem } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useAppDispatch } from '../../redux/hooks';
+import { deleteItem } from '../../redux/packages/packageSlice';
 
 interface IItemData {
   number: string;
@@ -12,7 +12,7 @@ export const HistoryListItem: React.FC<IItemData> = ({ number, addInfo }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <ListItem sx={{ justifyContent: "center" }}>
+    <ListItem sx={{ justifyContent: 'center' }}>
       <Button onClick={() => addInfo(number)} variant="text">
         {number}
       </Button>

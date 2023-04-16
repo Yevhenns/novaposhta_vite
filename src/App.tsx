@@ -1,8 +1,8 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/Layout/Layout";
-import { Home } from "./pages/Home/Home";
-import { Departments } from "./pages/Departments/Departments";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout/Layout';
+import { Home } from './pages/Home/Home';
+import { Departments } from './pages/Departments/Departments';
 
 export const App: React.FC = () => {
   return (

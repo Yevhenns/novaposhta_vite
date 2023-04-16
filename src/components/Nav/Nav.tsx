@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import css from "./Nav.module.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import css from './Nav.module.css';
 
 export const Nav: React.FC = () => {
   return (
