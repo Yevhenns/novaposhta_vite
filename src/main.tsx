@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/novaposhta_vite">
+        <BrowserRouter basename="">
           <App />
         </BrowserRouter>
       </PersistGate>
