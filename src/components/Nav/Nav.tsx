@@ -14,7 +14,7 @@ export const Nav: React.FC = () => {
 
         <li className={css.listItem}>
           <NavLink className={css.navLink} to="/packages">
-            Список відділень
+            Перелік відділень
           </NavLink>
         </li>
       </ul>
