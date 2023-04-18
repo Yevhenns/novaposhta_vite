@@ -2,31 +2,29 @@ import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Container } from '@mui/material';
-import css from './Footer.module.css';
+import * as SC from './Footer.styled';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className={css.footer}>
+    <SC.Footer>
       <Container sx={{ display: 'flex', mx: 'auto' }}>
-        <div className={css.iconSet}>
-          <a
-            className={css.socialLink}
+        <SC.IconSet>
+          <SC.SocialLink
             href="https://github.com/Yevhenns"
             target="_blank"
             rel="noreferrer noopener"
           >
             <GitHubIcon fontSize="large" />
-          </a>
-          <a
-            className={css.socialLink}
+          </SC.SocialLink>
+          <SC.SocialLink
             href="https://linkedin.com/in/yevhen-ziuskin-031b7b23b/"
             target="_blank"
             rel="noreferrer noopener"
           >
             <LinkedInIcon fontSize="large" />
-          </a>
-        </div>
+          </SC.SocialLink>
+        </SC.IconSet>
       </Container>
-    </footer>
+    </SC.Footer>
   );
 };
