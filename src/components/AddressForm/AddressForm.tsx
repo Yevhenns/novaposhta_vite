@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Stack, TextField, Button, Box } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
+import { useTranslation } from 'react-i18next';
 
 interface IAddressForm {
   handlerSabmit: (city: string) => void;
@@ -11,6 +12,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
   handlerSabmit,
   currentButtonClick,
 }) => {
+  const { t } = useTranslation();
   const [city, setCity] = useState('');
 
   const handleCityChange = (e: {
@@ -42,9 +44,8 @@ export const AddressForm: React.FC<IAddressForm> = ({
           value={city}
           onChange={handleCityChange}
           type="text"
-          name="city"
-          placeholder="Місто"
-          label="Введіть назву міста"
+          name="city"          
+          label={t("labelCity")}
           variant="standard"
         />
       </Stack>
@@ -56,7 +57,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
           endIcon={<SearchTwoToneIcon />}
           sx={{ display: 'flex', mx: 'auto', marginTop: '10px' }}
         >
-          Пошук відділень
+          {t("searchOfficesBtn")}
         </Button>
         <Button
           onClick={boxClick}
@@ -65,7 +66,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
           endIcon={<SearchTwoToneIcon />}
           sx={{ display: 'flex', mx: 'auto', marginTop: '10px' }}
         >
-          Пошук поштоматів
+          {t("searchBoxesBtn")}
         </Button>
       </Box>
     </form>

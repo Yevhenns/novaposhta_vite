@@ -10,7 +10,7 @@
   display: flex;
 }
 .listItem:first-child {
-  margin-right: 5px;
+  margin-right: 10px;
   @media screen and (min-width: 768px) {
     margin-right: 20px;
   }
@@ -28,4 +28,8 @@
 .navLink[aria-current] {
   color: white;
   box-shadow: 10px 5px 5px grey;
+}
+.flagSet {
+  text-align: center;
+  padding: 10px;
 }

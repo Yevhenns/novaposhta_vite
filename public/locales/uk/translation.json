@@ -1,0 +1,20 @@
+{
+    "navCheckPage": "Перевірити ТТН",
+    "navListPage": "Список відділень",
+    "infoStatus": "Статус: ",
+    "infoNoStatus": "Статус: Інформація відсутня",
+    "infoSender": "Відправник: ",
+    "infoNoSender": "Відправник: Інформація відсутня",
+    "infoRecipient": "Отримувач: ",
+    "infoNoRecipient": "Отримувач: Інформація відсутня",
+    "historyTitle": "Історія пошуку",
+    "clearHistory": "Очистити історію",
+    "homeTitle": "Мої посилки",
+    "exampleNumber": "Приклад номеру: ",    
+    "labelNumber": "Введіть 14-значний номер посилки",
+    "searcPackageBtn": "Пошук",
+    "cityInputTitle": "Населений пункт: ",
+    "labelCity": "Введіть назву міста",
+    "searchOfficesBtn": "Пошук відділень",
+    "searchBoxesBtn": "Пошук поштоматів"
+}
