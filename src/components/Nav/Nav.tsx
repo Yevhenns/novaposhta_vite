@@ -27,12 +27,14 @@ export const Nav: React.FC = () => {
           </li>
         </ul>
       </nav>
+      <div className={css.flagSet}>
       <Button onClick={() => changeLanguage('uk')}>
         <CIcon icon={cifUa} size="xl" />
       </Button>
       <Button onClick={() => changeLanguage('en')}>
         <CIcon icon={cifUs} size="xl" />
       </Button>
+      </div>      
     </>
   );
 };
