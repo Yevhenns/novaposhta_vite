@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Button } from '@mui/material';
 import css from './Nav.module.css';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from 'i18next';
+import CIcon from '@coreui/icons-react';
+import { cifUa, cifUs } from '@coreui/icons';
 
 export const Nav: React.FC = () => {
   const { t } = useTranslation();
@@ -19,13 +22,17 @@ export const Nav: React.FC = () => {
 
           <li className={css.listItem}>
             <NavLink className={css.navLink} to="/packages">
-            {t('navListPage')}
+              {t('navListPage')}
             </NavLink>
           </li>
         </ul>
       </nav>
-      <button onClick={() => changeLanguage('uk')}>UK</button>
-      <button onClick={() => changeLanguage('en')}>EN</button>
+      <Button onClick={() => changeLanguage('uk')}>
+        <CIcon icon={cifUa} size="xl" />
+      </Button>
+      <Button onClick={() => changeLanguage('en')}>
+        <CIcon icon={cifUs} size="xl" />
+      </Button>
     </>
   );
 };
