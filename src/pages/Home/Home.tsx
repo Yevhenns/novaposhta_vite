@@ -13,10 +13,13 @@ import {
 import { Container, CircularProgress, Box } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useTranslation } from 'react-i18next';
 
 type TypeInfo = { status: string; sender: string; recipient: string };
 
 export const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   const packageArray = useAppSelector(getPackagesArray);
   const isLoading = useAppSelector(getIsLoading);
   const dispatch = useAppDispatch();
@@ -60,8 +63,8 @@ export const Home: React.FC = () => {
   return (
     <section>
       <Container maxWidth="sm">
-        <h1>Мої посилки</h1>
-        {packageArray.length === 0 && <p>Приклад номеру: 20400271548566</p>}
+        <h1>{t('homeTitle')}</h1>
+        {packageArray.length === 0 && <p>{t('exampleNumber')}20400271548566</p>}
         <Form
           onSubmit={handlerSabmit}
           addFormNumber={addFormNumber}

@@ -3,6 +3,7 @@ import { useAppSelector } from '../../redux/hooks';
 import { getCurrentCity } from '../../redux/departments/departmentsSelectors';
 import { nanoid } from 'nanoid';
 import { List, ListItem } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 interface ICurrentDepartments {
   currentDepartments: string[];
@@ -11,6 +12,7 @@ interface ICurrentDepartments {
 export const DepartmentList: React.FC<ICurrentDepartments> = ({
   currentDepartments,
 }) => {
+  const { t } = useTranslation();
   const currentCity = useAppSelector(getCurrentCity);
 
   const commonStyles = {
@@ -22,7 +24,7 @@ export const DepartmentList: React.FC<ICurrentDepartments> = ({
 
   return (
     <>
-      <h2>Населений пункт: {currentCity.toUpperCase()}</h2>
+      <h2>{t('cityInputTitle')}{currentCity.toUpperCase()}</h2>
       <List>
         {currentDepartments.map(item => {
           return (

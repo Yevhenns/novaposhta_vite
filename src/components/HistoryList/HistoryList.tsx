@@ -4,6 +4,7 @@ import { useAppDispatch } from '../../redux/hooks';
 import { clearAll } from '../../redux/packages/packageSlice';
 import { Button, Box, List } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useTranslation } from 'react-i18next';
 
 interface IData {
   data: [{ number: string; status: string; sender: string; recipient: string }];
@@ -12,10 +13,11 @@ interface IData {
 
 export const HistoryList: React.FC<IData> = ({ data, addInfo }) => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   return (
     <Box>
-      <h2>Історія пошуку</h2>
+      <h2>{t('historyTitle')}</h2>
       <List>
         {data.map(item => {
           return (
@@ -34,7 +36,7 @@ export const HistoryList: React.FC<IData> = ({ data, addInfo }) => {
         color="error"
         sx={{ display: 'flex', mx: 'auto' }}
       >
-        Очистити історію
+        {t('clearHistory')}
       </Button>
     </Box>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Stack, TextField, Button } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
+import { useTranslation } from 'react-i18next';
 
 interface IForm {
   onSubmit: (umber: string) => void;
@@ -13,6 +14,7 @@ export const Form: React.FC<IForm> = ({
   addFormNumber,
   inputNumber,
 }) => {
+  const { t } = useTranslation();
   const [number, setNumber] = useState('');
 
   useEffect(() => {
@@ -35,9 +37,8 @@ export const Form: React.FC<IForm> = ({
           value={number}
           onChange={handleNumberChange}
           type="text"
-          name="number"
-          placeholder="Номер посилки"
-          label="Введіть 14-значний номер посилки"
+          name="number"          
+          label={t('labelNumber')}
           variant="standard"
         />
       </Stack>
@@ -46,8 +47,7 @@ export const Form: React.FC<IForm> = ({
         variant="contained"
         endIcon={<SearchTwoToneIcon />}
         sx={{ display: 'flex', mx: 'auto' }}
-      >
-        Пошук
+      >{t('searcPackageBtn')}
       </Button>
     </form>
   );

@@ -15,8 +15,11 @@ import { currentCityDepartments } from '../../redux/departments/departmentsSlice
 import { Container, Box, CircularProgress } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useTranslation } from 'react-i18next';
 
 export const Departments: React.FC = () => {
+  const { t } = useTranslation();
+
   const dispatch = useAppDispatch();
   const departments = useAppSelector(getDepartmentsArray);
   const loading = useAppSelector(getIsLoading);
@@ -62,7 +65,7 @@ export const Departments: React.FC = () => {
   return (
     <section>
       <Container maxWidth="sm">
-        <h1>Список відділень</h1>
+        <h1>{t('navListPage')}</h1>
         <AddressForm
           handlerSabmit={handlerSabmit}
           currentButtonClick={currentButtonClick}
