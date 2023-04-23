@@ -5,7 +5,7 @@ import css from './Nav.module.css';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from 'i18next';
 import CIcon from '@coreui/icons-react';
-import { cifUa, cifUs } from '@coreui/icons';
+import { cifUa, cifUs, cifPl } from '@coreui/icons';
 
 export const Nav: React.FC = () => {
   const { t } = useTranslation();
@@ -28,13 +28,16 @@ export const Nav: React.FC = () => {
         </ul>
       </nav>
       <div className={css.flagSet}>
-      <Button onClick={() => changeLanguage('uk')}>
-        <CIcon icon={cifUa} size="xl" />
-      </Button>
-      <Button onClick={() => changeLanguage('en')}>
-        <CIcon icon={cifUs} size="xl" />
-      </Button>
-      </div>      
+        <Button onClick={() => changeLanguage('uk')}>
+          <CIcon icon={cifUa} size="xl" />
+        </Button>
+        <Button onClick={() => changeLanguage('en')}>
+          <CIcon icon={cifUs} size="xl" />
+        </Button>
+        <Button onClick={() => changeLanguage('pl')}>
+          <CIcon icon={cifPl} size="xl" />
+        </Button>
+      </div>
     </>
   );
 };

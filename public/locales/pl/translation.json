@@ -1,0 +1,20 @@
+{
+  "navCheckPage": "Sprawdź po numerze",
+  "navListPage": "Lista oddziałów",
+  "infoStatus": "Status: ",
+  "infoNoStatus": "Status: Brak informacji",
+  "infoSender": "Nadawca: ",
+  "infoNoSender": "Nadawca: Brak informacji",
+  "infoRecipient": "Odbiorca: ",
+  "infoNoRecipient": "Odbiorca: Brak informacji",
+  "historyTitle": "Historia wyszukiwania",
+  "clearHistory": "Oczyścić historię",
+  "homeTitle": "Moje przesyłki",
+  "exampleNumber": "Przykładowy numer: ",
+  "labelNumber": "Wprowadź 14-cyfrowy numer przesyłki",
+  "searcPackageBtn": "Szukaj",
+  "cityInputTitle": "Miasto: ",
+  "labelCity": "Wpisz nazwę miasta po ukraińsku",
+  "searchOfficesBtn": "Wyszukiwanie oddziałów",
+  "searchBoxesBtn": "Wyszukiwanie pocztomatów"
+}

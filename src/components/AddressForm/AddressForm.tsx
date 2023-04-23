@@ -44,8 +44,8 @@ export const AddressForm: React.FC<IAddressForm> = ({
           value={city}
           onChange={handleCityChange}
           type="text"
-          name="city"          
-          label={t("labelCity")}
+          name="city"
+          label={t('labelCity')}
           variant="standard"
         />
       </Stack>
@@ -57,7 +57,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
           endIcon={<SearchTwoToneIcon />}
           sx={{ display: 'flex', mx: 'auto', marginTop: '10px' }}
         >
-          {t("searchOfficesBtn")}
+          {t('searchOfficesBtn')}
         </Button>
         <Button
           onClick={boxClick}
@@ -66,7 +66,7 @@ export const AddressForm: React.FC<IAddressForm> = ({
           endIcon={<SearchTwoToneIcon />}
           sx={{ display: 'flex', mx: 'auto', marginTop: '10px' }}
         >
-          {t("searchBoxesBtn")}
+          {t('searchBoxesBtn')}
         </Button>
       </Box>
     </form>

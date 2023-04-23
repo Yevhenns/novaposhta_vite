@@ -8,21 +8,30 @@ interface IInfoItem {
 
 export const PackageInfo: React.FC<IInfoItem> = ({ info }) => {
   const { t } = useTranslation();
-  
+
   return (
     <List>
       {info.status ? (
-        <ListItem>{t('infoStatus')}{info.status}</ListItem>
+        <ListItem>
+          {t('infoStatus')}
+          {info.status}
+        </ListItem>
       ) : (
         <ListItem>{t('infoNoStatus')}</ListItem>
       )}
       {info.sender ? (
-        <ListItem>{t('infoSender')}{info.sender}</ListItem>
+        <ListItem>
+          {t('infoSender')}
+          {info.sender}
+        </ListItem>
       ) : (
         <ListItem>{t('infoNoSender')}</ListItem>
       )}
       {info.recipient ? (
-        <ListItem>{t('infoRecipient')}{info.recipient}</ListItem>
+        <ListItem>
+          {t('infoRecipient')}
+          {info.recipient}
+        </ListItem>
       ) : (
         <ListItem>{t('infoNoRecipient')}</ListItem>
       )}

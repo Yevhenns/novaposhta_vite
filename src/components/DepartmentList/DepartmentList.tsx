@@ -24,7 +24,10 @@ export const DepartmentList: React.FC<ICurrentDepartments> = ({
 
   return (
     <>
-      <h2>{t('cityInputTitle')}{currentCity.toUpperCase()}</h2>
+      <h2>
+        {t('cityInputTitle')}
+        {currentCity.toUpperCase()}
+      </h2>
       <List>
         {currentDepartments.map(item => {
           return (

@@ -4,7 +4,7 @@ import { Layout } from './components/Layout/Layout';
 import { Home } from './pages/Home/Home';
 import { Departments } from './pages/Departments/Departments';
 
-export const App: React.FC = () => {  
+export const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

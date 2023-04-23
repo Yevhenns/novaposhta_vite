@@ -37,7 +37,7 @@ export const Form: React.FC<IForm> = ({
           value={number}
           onChange={handleNumberChange}
           type="text"
-          name="number"          
+          name="number"
           label={t('labelNumber')}
           variant="standard"
         />
@@ -47,7 +47,8 @@ export const Form: React.FC<IForm> = ({
         variant="contained"
         endIcon={<SearchTwoToneIcon />}
         sx={{ display: 'flex', mx: 'auto' }}
-      >{t('searcPackageBtn')}
+      >
+        {t('searcPackageBtn')}
       </Button>
     </form>
   );
