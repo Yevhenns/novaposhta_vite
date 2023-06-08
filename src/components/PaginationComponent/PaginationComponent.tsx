@@ -6,10 +6,11 @@ export const PaginationComponent: React.FC<TPaginationProps> = ({
   perPage,
   paginate,
 }) => {
-  const pageNumbers = [];
+  const pageNumbers = [] as number[];
+
 
   for (let i = 1; i <= Math.ceil(departments / perPage); i++) {
-    pageNumbers.push(i);
+    pageNumbers.push(i);  
   }
 
   return (
