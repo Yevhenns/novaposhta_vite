@@ -3,13 +3,8 @@ import { getPackage } from './packageOperations';
 import { toast } from 'react-toastify';
 
 const initialState = {
-  packagesAll: [] as {
-    number: string;
-    status: string;
-    sender: string;
-    recipient: string;
-  }[],
-  error: false as any,
+  packagesAll: [] as IHistoryListData[],
+  error: false as boolean | undefined | string,
   isLoading: false,
 };
 
@@ -20,7 +15,7 @@ const packagesSlice = createSlice({
     clearAll(state) {
       state.packagesAll = [];
     },
-    deleteItem(state, action) {
+    deleteItem(state, action: { payload: string }) {
       state.packagesAll = state.packagesAll.filter(
         item => item.number !== action.payload
       );

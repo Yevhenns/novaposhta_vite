@@ -15,8 +15,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
 
-type TypeInfo = { status: string; sender: string; recipient: string };
-
 export const Home: React.FC = () => {
   const { t } = useTranslation();
 
@@ -24,7 +22,7 @@ export const Home: React.FC = () => {
   const isLoading = useAppSelector(getIsLoading);
   const dispatch = useAppDispatch();
 
-  const [info, setInfo] = useState<null | TypeInfo>(null);
+  const [info, setInfo] = useState<null | TInfo>(null);
   const [inputNumber, setInputNumber] = useState('');
   const [addFormNumber, setAddFormNumber] = useState(false);
 

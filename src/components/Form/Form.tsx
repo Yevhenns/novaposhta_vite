@@ -3,13 +3,7 @@ import { Stack, TextField, Button } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import { useTranslation } from 'react-i18next';
 
-interface IForm {
-  onSubmit: (umber: string) => void;
-  addFormNumber: boolean;
-  inputNumber: string;
-}
-
-export const Form: React.FC<IForm> = ({
+export const Form: React.FC<TForm> = ({
   onSubmit,
   addFormNumber,
   inputNumber,

@@ -1,13 +1,7 @@
 import React from 'react';
 import { Pagination } from '@mui/material';
 
-type PaginationProps = {
-  departments: number;
-  perPage: number;
-  paginate: (_: object, pageNumber: number) => void;
-};
-
-export const PaginationComponent: React.FC<PaginationProps> = ({
+export const PaginationComponent: React.FC<TPaginationProps> = ({
   departments,
   perPage,
   paginate,
