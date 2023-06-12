@@ -4,11 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch } from '../../redux/hooks';
 import { deleteItem } from '../../redux/packages/packageSlice';
 
-interface IItemData {
-  number: string;
-  addInfo: (number: string) => void;
-}
-export const HistoryListItem: React.FC<IItemData> = ({ number, addInfo }) => {
+export const HistoryListItem: React.FC<THistoryItemData> = ({ number, addInfo }) => {
   const dispatch = useAppDispatch();
 
   return (

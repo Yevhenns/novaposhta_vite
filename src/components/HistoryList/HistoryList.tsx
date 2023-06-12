@@ -6,12 +6,7 @@ import { Button, Box, List } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useTranslation } from 'react-i18next';
 
-interface IData {
-  data: [{ number: string; status: string; sender: string; recipient: string }];
-  addInfo: (number: string) => void;
-}
-
-export const HistoryList: React.FC<IData> = ({ data, addInfo }) => {
+export const HistoryList: React.FC<THistoryList> = ({ data, addInfo }) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 

@@ -5,11 +5,7 @@ import { nanoid } from 'nanoid';
 import { List, ListItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-interface ICurrentDepartments {
-  currentDepartments: string[];
-}
-
-export const DepartmentList: React.FC<ICurrentDepartments> = ({
+export const DepartmentList: React.FC<TCurrentDepartments> = ({
   currentDepartments,
 }) => {
   const { t } = useTranslation();

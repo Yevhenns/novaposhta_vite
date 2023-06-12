@@ -2,35 +2,31 @@ import React from 'react';
 import { List, ListItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-interface IInfoItem {
-  info: { status: string; sender: string; recipient: string };
-}
-
-export const PackageInfo: React.FC<IInfoItem> = ({ info }) => {
+export const PackageInfo: React.FC<TInfo> = ({status, sender, recipient}) => {
   const { t } = useTranslation();
 
   return (
     <List>
-      {info.status ? (
+      {status ? (
         <ListItem>
           {t('infoStatus')}
-          {info.status}
+          {status}
         </ListItem>
       ) : (
         <ListItem>{t('infoNoStatus')}</ListItem>
       )}
-      {info.sender ? (
+      {sender ? (
         <ListItem>
           {t('infoSender')}
-          {info.sender}
+          {sender}
         </ListItem>
       ) : (
         <ListItem>{t('infoNoSender')}</ListItem>
       )}
-      {info.recipient ? (
+      {recipient ? (
         <ListItem>
           {t('infoRecipient')}
-          {info.recipient}
+          {recipient}
         </ListItem>
       ) : (
         <ListItem>{t('infoNoRecipient')}</ListItem>

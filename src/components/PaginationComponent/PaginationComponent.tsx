@@ -1,21 +1,16 @@
 import React from 'react';
 import { Pagination } from '@mui/material';
 
-type PaginationProps = {
-  departments: number;
-  perPage: number;
-  paginate: (_: object, pageNumber: number) => void;
-};
-
-export const PaginationComponent: React.FC<PaginationProps> = ({
+export const PaginationComponent: React.FC<TPaginationProps> = ({
   departments,
   perPage,
   paginate,
 }) => {
-  const pageNumbers = [];
+  const pageNumbers = [] as number[];
+
 
   for (let i = 1; i <= Math.ceil(departments / perPage); i++) {
-    pageNumbers.push(i);
+    pageNumbers.push(i);  
   }
 
   return (

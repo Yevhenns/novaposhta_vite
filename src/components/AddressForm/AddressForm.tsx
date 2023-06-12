@@ -3,12 +3,7 @@ import { Stack, TextField, Button, Box } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import { useTranslation } from 'react-i18next';
 
-interface IAddressForm {
-  handlerSabmit: (city: string) => void;
-  currentButtonClick: (buttonName: string) => void;
-}
-
-export const AddressForm: React.FC<IAddressForm> = ({
+export const AddressForm: React.FC<TAddressForm> = ({
   handlerSabmit,
   currentButtonClick,
 }) => {

@@ -2,20 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Form } from '../../components/Form/Form';
 import { PackageInfo } from '../../components/PackageInfo/PackageInfo';
 import { HistoryList } from '../../components/HistoryList/HistoryList';
-
 import { getPackage } from '../../redux/packages/packageOperations';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   getPackagesArray,
   getIsLoading,
 } from '../../redux/packages/packageSelectors';
-
 import { Container, CircularProgress, Box } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
-
-type TypeInfo = { status: string; sender: string; recipient: string };
 
 export const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -24,19 +20,21 @@ export const Home: React.FC = () => {
   const isLoading = useAppSelector(getIsLoading);
   const dispatch = useAppDispatch();
 
-  const [info, setInfo] = useState<null | TypeInfo>(null);
+  const [info, setInfo] = useState(null as null | TInfo);
   const [inputNumber, setInputNumber] = useState('');
   const [addFormNumber, setAddFormNumber] = useState(false);
 
-  useEffect(
-    () =>
-      setInfo(
-        packageArray.find(
-          (item: { number: string }) => item.number === inputNumber
-        )
-      ),
-    [packageArray, inputNumber]
-  );
+  useEffect(() => {
+    const chosenItem = packageArray.find(item => item.number === inputNumber);
+    if (chosenItem !== undefined) {
+      const filteredInfo = {
+        status: chosenItem.status,
+        sender: chosenItem.sender,
+        recipient: chosenItem.recipient,
+      };
+      setInfo(filteredInfo);
+    }
+  }, [packageArray, inputNumber]);
 
   const handlerSabmit = (number: string) => {
     const addedNumber = packageArray.some(
@@ -75,7 +73,7 @@ export const Home: React.FC = () => {
             <CircularProgress />
           </Box>
         )}
-        {info && <PackageInfo info={info} />}
+        {info !== null && <PackageInfo status={info.status} sender={info.sender} recipient={info.recipient} />}
         {packageArray.length > 0 && (
           <HistoryList data={packageArray} addInfo={addInfo} />
         )}
