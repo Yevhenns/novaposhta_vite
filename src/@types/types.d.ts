@@ -1,11 +1,17 @@
-type THistoryListData = {
+type HistoryListData = {
   number: string;
   status: string;
   sender: string;
   recipient: string;
 };
 
-type THistoryList = {
+type Info = {
+  status: string;
+  sender: string;
+  recipient: string;
+};
+
+type HistoryList = {
   data: THistoryListData[];
   addInfo: (number: string) => void;
 };

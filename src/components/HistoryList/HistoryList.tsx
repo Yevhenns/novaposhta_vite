@@ -6,7 +6,7 @@ import { Button, Box, List } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useTranslation } from 'react-i18next';
 
-export const HistoryList: FC<THistoryList> = ({ data, addInfo }) => {
+export const HistoryList: FC<HistoryList> = ({ data, addInfo }) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 

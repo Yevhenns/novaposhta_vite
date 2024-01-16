@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { List, ListItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-type InfoProps = THistoryListData;
+type InfoProps = Info;
 
 export const PackageInfo: FC<InfoProps> = ({ status, sender, recipient }) => {
   const { t } = useTranslation();

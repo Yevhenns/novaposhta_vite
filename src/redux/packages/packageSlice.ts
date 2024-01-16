@@ -3,7 +3,7 @@ import { getPackage } from './packageOperations';
 import { toast } from 'react-toastify';
 
 const initialState = {
-  packagesAll: [] as THistoryListData[],
+  packagesAll: [] as HistoryListData[],
   error: false as any,
   isLoading: false,
 };

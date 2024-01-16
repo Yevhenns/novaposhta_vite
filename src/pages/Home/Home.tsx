@@ -20,7 +20,7 @@ export const Home: FC = () => {
   const isLoading = useAppSelector(getIsLoading);
   const dispatch = useAppDispatch();
 
-  const [info, setInfo] = useState(null as null | TInfo);
+  const [info, setInfo] = useState(null as null | Info);
   const [inputNumber, setInputNumber] = useState('');
   const [addFormNumber, setAddFormNumber] = useState(false);
 
