@@ -17,7 +17,7 @@ root.render(
     <Suspense fallback={<div>Завантаження</div>}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter basename="">
+          <BrowserRouter>
             <App />
           </BrowserRouter>
         </PersistGate>

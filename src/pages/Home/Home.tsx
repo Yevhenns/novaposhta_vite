@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { Form } from '../../components/Form/Form';
 import { PackageInfo } from '../../components/PackageInfo/PackageInfo';
 import { HistoryList } from '../../components/HistoryList/HistoryList';
@@ -13,7 +13,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
 
-export const Home: React.FC = () => {
+export const Home: FC = () => {
   const { t } = useTranslation();
 
   const packageArray = useAppSelector(getPackagesArray);
@@ -73,7 +73,13 @@ export const Home: React.FC = () => {
             <CircularProgress />
           </Box>
         )}
-        {info !== null && <PackageInfo status={info.status} sender={info.sender} recipient={info.recipient} />}
+        {info !== null && (
+          <PackageInfo
+            status={info.status}
+            sender={info.sender}
+            recipient={info.recipient}
+          />
+        )}
         {packageArray.length > 0 && (
           <HistoryList data={packageArray} addInfo={addInfo} />
         )}

@@ -1,16 +1,24 @@
-import React from 'react';
+import { FC } from 'react';
 import { Pagination } from '@mui/material';
+import { useAppSelector } from '../../redux/hooks';
+import { getDepartmentsArray } from '../../redux/departments/departmentsSelectors';
 
-export const PaginationComponent: React.FC<TPaginationProps> = ({
-  departments,
+type PaginationProps = {
+  perPage: number;
+  paginate: (_: object, pageNumber: number) => void;
+};
+
+export const PaginationComponent: FC<PaginationProps> = ({
   perPage,
   paginate,
 }) => {
+  const departments = useAppSelector(getDepartmentsArray);
+  const departmentsLength = departments.length;
+
   const pageNumbers = [] as number[];
 
-
-  for (let i = 1; i <= Math.ceil(departments / perPage); i++) {
-    pageNumbers.push(i);  
+  for (let i = 1; i <= Math.ceil(departmentsLength / perPage); i++) {
+    pageNumbers.push(i);
   }
 
   return (

@@ -1,10 +1,15 @@
-import React from 'react';
+import { FC } from 'react';
 import { Button, IconButton, ListItem } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch } from '../../redux/hooks';
 import { deleteItem } from '../../redux/packages/packageSlice';
 
-export const HistoryListItem: React.FC<THistoryItemData> = ({ number, addInfo }) => {
+type HistoryItemProps = {
+  number: string;
+  addInfo: (number: string) => void;
+};
+
+export const HistoryListItem: FC<HistoryItemProps> = ({ number, addInfo }) => {
   const dispatch = useAppDispatch();
 
   return (

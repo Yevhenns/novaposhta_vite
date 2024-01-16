@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,7 @@ import CIcon from '@coreui/icons-react';
 import { cifUa, cifUs, cifPl } from '@coreui/icons';
 import css from './Nav.module.css';
 
-export const Nav: React.FC = () => {
+export const Nav: FC = () => {
   const { t } = useTranslation();
 
   return (

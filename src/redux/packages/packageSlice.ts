@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const initialState = {
   packagesAll: [] as THistoryListData[],
-  error: false as boolean | undefined | string,
+  error: false as any,
   isLoading: false,
 };
 

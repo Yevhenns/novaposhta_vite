@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { HistoryListItem } from './HistoryListItem';
 import { useAppDispatch } from '../../redux/hooks';
 import { clearAll } from '../../redux/packages/packageSlice';
@@ -6,7 +6,7 @@ import { Button, Box, List } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useTranslation } from 'react-i18next';
 
-export const HistoryList: React.FC<THistoryList> = ({ data, addInfo }) => {
+export const HistoryList: FC<THistoryList> = ({ data, addInfo }) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 

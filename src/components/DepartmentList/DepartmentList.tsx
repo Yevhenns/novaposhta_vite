@@ -1,11 +1,15 @@
-import React from 'react';
+import { FC } from 'react';
 import { useAppSelector } from '../../redux/hooks';
 import { getCurrentCity } from '../../redux/departments/departmentsSelectors';
 import { nanoid } from 'nanoid';
 import { List, ListItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-export const DepartmentList: React.FC<TCurrentDepartments> = ({
+type CurrentDepartmentsProps = {
+  currentDepartments: string[];
+};
+
+export const DepartmentList: FC<CurrentDepartmentsProps> = ({
   currentDepartments,
 }) => {
   const { t } = useTranslation();

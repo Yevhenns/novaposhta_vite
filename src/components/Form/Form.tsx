@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Stack, TextField, Button } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import { useTranslation } from 'react-i18next';
 
-export const Form: React.FC<TForm> = ({
+type FormProps = {
+  onSubmit: (number: string) => void;
+  addFormNumber: boolean;
+  inputNumber: string;
+};
+
+export const Form: FC<FormProps> = ({
   onSubmit,
   addFormNumber,
   inputNumber,

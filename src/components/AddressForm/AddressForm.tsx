@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import { FC, SetStateAction, useState } from 'react';
 import { Stack, TextField, Button, Box } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import { useTranslation } from 'react-i18next';
 
-export const AddressForm: React.FC<TAddressForm> = ({
+type AddressFormProps = {
+  handlerSabmit: (city: string) => void;
+  currentButtonClick: (buttonName: string) => void;
+};
+
+export const AddressForm: FC<AddressFormProps> = ({
   handlerSabmit,
   currentButtonClick,
 }) => {
@@ -11,7 +16,7 @@ export const AddressForm: React.FC<TAddressForm> = ({
   const [city, setCity] = useState('');
 
   const handleCityChange = (e: {
-    target: { value: React.SetStateAction<string> };
+    target: { value: SetStateAction<string> };
   }): any => {
     setCity(e.target.value);
   };

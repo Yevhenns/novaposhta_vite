@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { DepartmentList } from '../../components/DepartmentList/DepartmentList';
 import { AddressForm } from '../../components/AddressForm/AddressForm';
 import { PaginationComponent } from '../../components/PaginationComponent/PaginationComponent';
@@ -17,7 +17,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
 
-export const Departments: React.FC = () => {
+export const Departments: FC = () => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -80,11 +80,7 @@ export const Departments: React.FC = () => {
         )}
         {!loading && (
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <PaginationComponent
-              departments={departments.length}
-              perPage={perPage}
-              paginate={paginate}
-            />
+            <PaginationComponent perPage={perPage} paginate={paginate} />
           </Box>
         )}
         <ToastContainer />
