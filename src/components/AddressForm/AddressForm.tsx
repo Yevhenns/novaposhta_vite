@@ -49,7 +49,7 @@ export const AddressForm: FC<AddressFormProps> = ({
           variant="standard"
         />
       </Stack>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Button
           onClick={departmentClick}
           type="submit"

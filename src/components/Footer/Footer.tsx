@@ -17,7 +17,7 @@ export const Footer: FC = () => {
             <GitHubIcon fontSize="large" />
           </SC.SocialLink>
           <SC.SocialLink
-            href="https://linkedin.com/in/yevhen-ziuskin-031b7b23b/"
+            href="https://www.linkedin.com/in/%D1%94%D0%B2%D0%B3%D0%B5%D0%BD-%D0%B7%D1%8E%D1%81%D0%BA%D1%96%D0%BD-031b7b23b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7%2FUq8DgZSTybOwKAdJRrNQ%3D%3D"
             target="_blank"
             rel="noreferrer noopener"
           >
