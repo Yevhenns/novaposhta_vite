@@ -1,10 +1,9 @@
-import { FC } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Container } from '@mui/material';
 import * as SC from './Footer.styled';
 
-export const Footer: FC = () => {
+export const Footer = () => {
   return (
     <SC.Footer>
       <Container sx={{ display: 'flex', mx: 'auto' }}>

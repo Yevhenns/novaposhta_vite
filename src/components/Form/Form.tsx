@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react';
 import { Stack, TextField, Button } from '@mui/material';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import { useTranslation } from 'react-i18next';
@@ -9,11 +9,7 @@ type FormProps = {
   inputNumber: string;
 };
 
-export const Form: FC<FormProps> = ({
-  onSubmit,
-  addFormNumber,
-  inputNumber,
-}) => {
+export const Form = ({ onSubmit, addFormNumber, inputNumber }: FormProps) => {
   const { t } = useTranslation();
   const [number, setNumber] = useState('');
 
@@ -21,11 +17,11 @@ export const Form: FC<FormProps> = ({
     if (addFormNumber) setNumber(inputNumber);
   }, [addFormNumber, inputNumber]);
 
-  const handleNumberChange = (e: { target: { value: string } }) => {
+  const handleNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNumber(e.target.value.trim());
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     onSubmit(number);
   };
